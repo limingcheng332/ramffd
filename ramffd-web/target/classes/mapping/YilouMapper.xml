@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mitch.dao.YilouMapper" >
+  <resultMap id="BaseResultMap" type="com.mitch.bean.Yilou" >
+    <id column="count_datetime" property="countDatetime" jdbcType="VARCHAR" />
+    <id column="play_code" property="playCode" jdbcType="INTEGER" />
+    <id column="chart_type" property="chartType" jdbcType="INTEGER" />
+    <result column="play_ename" property="playEname" jdbcType="VARCHAR" />
+    <result column="term_code" property="termCode" jdbcType="VARCHAR" />
+    <result column="max_val" property="maxVal" jdbcType="VARCHAR" />
+    <result column="cur_val" property="curVal" jdbcType="VARCHAR" />
+    <result column="times_val" property="timesVal" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    count_datetime, play_code, chart_type, play_ename, term_code, max_val, cur_val, times_val
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.mitch.bean.YilouKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from ac_priceinfo_yilou
+    where count_datetime = #{countDatetime,jdbcType=VARCHAR}
+      and play_code = #{playCode,jdbcType=INTEGER}
+      and chart_type = #{chartType,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.mitch.bean.YilouKey" >
+    delete from ac_priceinfo_yilou
+    where count_datetime = #{countDatetime,jdbcType=VARCHAR}
+      and play_code = #{playCode,jdbcType=INTEGER}
+      and chart_type = #{chartType,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mitch.bean.Yilou" >
+    insert into ac_priceinfo_yilou (count_datetime, play_code, chart_type, 
+      play_ename, term_code, max_val, 
+      cur_val, times_val)
+    values (#{countDatetime,jdbcType=VARCHAR}, #{playCode,jdbcType=INTEGER}, #{chartType,jdbcType=INTEGER}, 
+      #{playEname,jdbcType=VARCHAR}, #{termCode,jdbcType=VARCHAR}, #{maxVal,jdbcType=VARCHAR}, 
+      #{curVal,jdbcType=VARCHAR}, #{timesVal,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mitch.bean.Yilou" >
+    insert into ac_priceinfo_yilou
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="countDatetime != null" >
+        count_datetime,
+      </if>
+      <if test="playCode != null" >
+        play_code,
+      </if>
+      <if test="chartType != null" >
+        chart_type,
+      </if>
+      <if test="playEname != null" >
+        play_ename,
+      </if>
+      <if test="termCode != null" >
+        term_code,
+      </if>
+      <if test="maxVal != null" >
+        max_val,
+      </if>
+      <if test="curVal != null" >
+        cur_val,
+      </if>
+      <if test="timesVal != null" >
+        times_val,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="countDatetime != null" >
+        #{countDatetime,jdbcType=VARCHAR},
+      </if>
+      <if test="playCode != null" >
+        #{playCode,jdbcType=INTEGER},
+      </if>
+      <if test="chartType != null" >
+        #{chartType,jdbcType=INTEGER},
+      </if>
+      <if test="playEname != null" >
+        #{playEname,jdbcType=VARCHAR},
+      </if>
+      <if test="termCode != null" >
+        #{termCode,jdbcType=VARCHAR},
+      </if>
+      <if test="maxVal != null" >
+        #{maxVal,jdbcType=VARCHAR},
+      </if>
+      <if test="curVal != null" >
+        #{curVal,jdbcType=VARCHAR},
+      </if>
+      <if test="timesVal != null" >
+        #{timesVal,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mitch.bean.Yilou" >
+    update ac_priceinfo_yilou
+    <set >
+      <if test="playEname != null" >
+        play_ename = #{playEname,jdbcType=VARCHAR},
+      </if>
+      <if test="termCode != null" >
+        term_code = #{termCode,jdbcType=VARCHAR},
+      </if>
+      <if test="maxVal != null" >
+        max_val = #{maxVal,jdbcType=VARCHAR},
+      </if>
+      <if test="curVal != null" >
+        cur_val = #{curVal,jdbcType=VARCHAR},
+      </if>
+      <if test="timesVal != null" >
+        times_val = #{timesVal,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where count_datetime = #{countDatetime,jdbcType=VARCHAR}
+      and play_code = #{playCode,jdbcType=INTEGER}
+      and chart_type = #{chartType,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mitch.bean.Yilou" >
+    update ac_priceinfo_yilou
+    set play_ename = #{playEname,jdbcType=VARCHAR},
+      term_code = #{termCode,jdbcType=VARCHAR},
+      max_val = #{maxVal,jdbcType=VARCHAR},
+      cur_val = #{curVal,jdbcType=VARCHAR},
+      times_val = #{timesVal,jdbcType=VARCHAR}
+    where count_datetime = #{countDatetime,jdbcType=VARCHAR}
+      and play_code = #{playCode,jdbcType=INTEGER}
+      and chart_type = #{chartType,jdbcType=INTEGER}
+  </update>
+  <select id="list" resultMap="BaseResultMap">
+    SELECT * FROM ac_priceinfo_yilou limit 10
+  </select>
+</mapper>

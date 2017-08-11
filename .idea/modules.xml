@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ramffd.iml" filepath="$PROJECT_DIR$/ramffd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ramffd-web/ramffd-web.iml" filepath="$PROJECT_DIR$/ramffd-web/ramffd-web.iml" />
     </modules>
   </component>
 </project>
