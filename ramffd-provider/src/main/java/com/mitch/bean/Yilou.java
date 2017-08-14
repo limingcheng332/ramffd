@@ -1,6 +1,8 @@
 package com.mitch.bean;
 
-public class Yilou extends YilouKey {
+import java.io.Serializable;
+
+public class Yilou extends YilouKey implements Serializable{
     private String playEname;
 
     private String termCode;

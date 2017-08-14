@@ -1,6 +1,8 @@
 package com.mitch.bean;
 
-public class YilouKey {
+import java.io.Serializable;
+
+public class YilouKey implements Serializable{
     private String countDatetime;
 
     private Integer playCode;

@@ -17,6 +17,6 @@
     <dubbo:protocol name="dubbo" port="20880" />
 
     <bean id="yilouService" class="com.mitch.service.impl.YilouServiceImpl" />
-    <dubbo:service interface="com.mitch.service.YilouService" ref="yilouService" register="true" version="1.0.0"/>
+    <dubbo:service interface="com.mitch.service.YilouService" ref="yilouService" register="true"/>
 
 </beans>
