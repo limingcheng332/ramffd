@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="paging" />
+        <module name="ramffd-consumer" />
+        <module name="ramffd-provider" />
         <module name="ramffd-web" />
         <module name="ramffdweb" />
       </profile>
@@ -14,6 +16,8 @@
     <bytecodeTargetLevel>
       <module name="paging" target="1.5" />
       <module name="ramffd" target="1.5" />
+      <module name="ramffd-consumer" target="1.5" />
+      <module name="ramffd-provider" target="1.5" />
       <module name="ramffd-web" target="1.5" />
       <module name="ramffdweb" target="1.5" />
     </bytecodeTargetLevel>

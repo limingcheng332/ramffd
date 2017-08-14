@@ -11,6 +11,8 @@
         <!--<module>ramffd-support</module>-->
         <!--<module>ramffd-framework</module>-->
         <module>ramffd-web</module>
+        <module>ramffd-provider</module>
+        <module>ramffd-consumer</module>
     </modules>
     <!-- 用来设置版本号 -->
     <properties>
