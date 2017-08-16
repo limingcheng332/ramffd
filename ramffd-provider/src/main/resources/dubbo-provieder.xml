@@ -19,4 +19,6 @@
     <bean id="yilouService" class="com.mitch.service.impl.YilouServiceImpl" />
     <dubbo:service interface="com.mitch.service.YilouService" ref="yilouService" register="true"/>
 
+    <bean id="tuserService" class="com.mitch.service.impl.TuserServiceImpl" />
+    <dubbo:service interface="com.mitch.service.TuserService" ref="tuserService" register="true"/>
 </beans>

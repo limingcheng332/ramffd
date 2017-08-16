@@ -52,6 +52,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring:2.5.6.SEC03" />
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.15.0-GA" />
           <element id="library" level="project" name="Maven: org.jboss.netty:netty:3.2.5.Final" />
+          <element id="archive" name="ramffd-support-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="ramffd-support" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

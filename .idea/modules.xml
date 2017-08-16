@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ramffd.iml" filepath="$PROJECT_DIR$/ramffd.iml" />
       <module fileurl="file://$PROJECT_DIR$/ramffd-consumer/ramffd-consumer.iml" filepath="$PROJECT_DIR$/ramffd-consumer/ramffd-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ramffd-provider/ramffd-provider.iml" filepath="$PROJECT_DIR$/ramffd-provider/ramffd-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ramffd-support/ramffd-support.iml" filepath="$PROJECT_DIR$/ramffd-support/ramffd-support.iml" />
       <module fileurl="file://$PROJECT_DIR$/ramffd-web/ramffd-web.iml" filepath="$PROJECT_DIR$/ramffd-web/ramffd-web.iml" />
     </modules>
   </component>

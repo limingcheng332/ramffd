@@ -13,6 +13,7 @@
         <module>ramffd-web</module>
         <module>ramffd-provider</module>
         <module>ramffd-consumer</module>
+        <module>ramffd-support</module>
     </modules>
     <!-- 用来设置版本号 -->
     <properties>

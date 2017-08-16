@@ -9,17 +9,17 @@
         <module name="paging" />
         <module name="ramffd-consumer" />
         <module name="ramffd-provider" />
+        <module name="ramffd-support" />
         <module name="ramffd-web" />
         <module name="ramffdweb" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="paging" target="1.5" />
+    <bytecodeTargetLevel target="1.7">
       <module name="ramffd" target="1.5" />
-      <module name="ramffd-consumer" target="1.5" />
+      <module name="ramffd-consumer" target="1.6" />
       <module name="ramffd-provider" target="1.5" />
+      <module name="ramffd-support" target="1.5" />
       <module name="ramffd-web" target="1.5" />
-      <module name="ramffdweb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
