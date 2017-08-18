@@ -37,8 +37,11 @@ public class ExecuteAPIProxy {
         } catch (Exception e) {
             throw new APIException(APIConstants.SYS_EXCEPTION,"初始化拦截器异常",e);
         }
+        //执行前置拦截
         executePreInterceptors();
+        //执行被拦截的方法
         APIParam resultParam = executeAPI.handle();
+        //执行后置拦截
         executePostInterceptors(executeAPI.getExecuteApiInfo().getApiParam(),resultParam);
         interceptors.clear();
         interceptors = null;
@@ -46,7 +49,7 @@ public class ExecuteAPIProxy {
     }
 
     /**
-     * 筛选拦截器
+     * 筛选拦截器，支持@Interceptor注解
      */
     private void initInterceptors() throws IllegalAccessException, InstantiationException {
         Set<Class<?> > classes = APIHelper.getInterceptorClassSet();
