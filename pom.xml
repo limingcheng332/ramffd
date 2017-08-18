@@ -14,6 +14,8 @@
         <module>ramffd-provider</module>
         <module>ramffd-consumer</module>
         <module>ramffd-support</module>
+        <module>ramffd-api-framework</module>
+        <module>ramffd-api</module>
     </modules>
     <!-- 用来设置版本号 -->
     <properties>

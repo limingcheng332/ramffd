@@ -55,6 +55,7 @@
           <element id="archive" name="ramffd-support-1.0-SNAPSHOT.jar">
             <element id="module-output" name="ramffd-support" />
           </element>
+          <element id="library" level="project" name="Maven: io.netty:netty-all:4.0.24.Final" />
         </element>
       </element>
       <element id="directory" name="META-INF">

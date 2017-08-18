@@ -1,25 +1,34 @@
 package com.mitch.netty;
 
-import com.mitch.utils.StringUtil;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerAdapter;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.DelimiterBasedFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
+import io.netty.channel.*;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 
 /**
  * Created by Administrator on 2017/8/16.
  */
-public class APIHandler extends SimpleChannelInboundHandler {
+@Component
+public class APIHandler extends ChannelInboundHandlerAdapter {
     Logger logger = Logger.getLogger(APIHandler.class);
+
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object o) throws Exception {
-        logger.info(String.format("接收到消息[%s]",o));
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        logger.info(String.format("有新的客户端连接,对方地址[%s]...",ctx.channel().remoteAddress()));
+    }
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        String massage = (String) msg;
+        logger.info(String.format("接收到客户端的消息[%s]",massage));
+
+
+    }
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        ctx.flush();
+    }
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        ctx.close();
     }
 }

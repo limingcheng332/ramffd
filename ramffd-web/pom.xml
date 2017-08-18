@@ -207,6 +207,11 @@
             <artifactId>ramffd-support</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.0.24.Final</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>ramffd-web</finalName>

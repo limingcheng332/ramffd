@@ -15,14 +15,23 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Administrator on 2017/8/16.
  */
+@Component
 public class APIServer {
-    private ServerConfigBean serverConfigBean = SpringContextUtil.getBean("serverConfigBean");
-    private Logger logger = Logger.getLogger(APIServer.class);
+    private ServerConfigBean serverConfigBean;
+    private Logger logger;
+
+    public APIServer() {
+
+    }
+
     public void start(){
+        serverConfigBean = SpringContextUtil.getBean("serverConfigBean");
+        logger = Logger.getLogger(APIServer.class);
         String port = serverConfigBean.getServerPort();
         // 配置NIO线程组
         EventLoopGroup bossGroup = new NioEventLoopGroup();// 连接线程
@@ -36,7 +45,7 @@ public class APIServer {
             bootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel socketChannel) throws Exception {
-                    ByteBuf delimiter= Unpooled.copiedBuffer("$_".getBytes());//指定消息分割符处理数据
+                    ByteBuf delimiter= Unpooled.copiedBuffer("$".getBytes());//指定消息分割符处理数据
                     socketChannel.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));//如果取消了分割符解码，就会出现TCP粘包之类的问题了
                     socketChannel.pipeline().addLast(new StringDecoder());
                     socketChannel.pipeline().addLast(new APIHandler());
