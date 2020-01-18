@@ -6,24 +6,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="paging" />
         <module name="ramffd-api" />
         <module name="ramffd-api-framework" />
         <module name="ramffd-consumer" />
         <module name="ramffd-provider" />
         <module name="ramffd-support" />
         <module name="ramffd-web" />
-        <module name="ramffdweb" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
-      <module name="ramffd" target="1.5" />
-      <module name="ramffd-api" target="1.5" />
+    <bytecodeTargetLevel>
+      <module name="ramffd" target="1.8" />
+      <module name="ramffd-api" target="1.8" />
       <module name="ramffd-api-framework" target="1.6" />
       <module name="ramffd-consumer" target="1.6" />
-      <module name="ramffd-provider" target="1.5" />
-      <module name="ramffd-support" target="1.5" />
-      <module name="ramffd-web" target="1.5" />
+      <module name="ramffd-provider" target="1.8" />
+      <module name="ramffd-support" target="1.8" />
+      <module name="ramffd-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

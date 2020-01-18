@@ -17,7 +17,7 @@ public class APIBootstrap {
         logger.info("-----------------------------API服务正在启动-----------------------------");
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[] { "applicationContext.xml" });
+                new String[] { "spring-api.xml" });
         context.start();
 
         logger.info("-------------------------------正在加载api接口---------------------------");

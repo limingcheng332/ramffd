@@ -5,9 +5,9 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2017/8/18.
  */
-public class UserResponseParam implements Serializable {
-    private String loginInfo;
-    private String name;
+public class UserResponseParam extends APIParam implements Serializable {
+    private String loginInfo = "ok";
+    private String name = "limc";
 
     public String getLoginInfo() {
         return loginInfo;

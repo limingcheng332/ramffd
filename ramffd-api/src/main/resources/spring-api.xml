@@ -13,7 +13,6 @@
 
     <import resource="dubbo-consumer.xml"/>
     <import resource="spring-redis.xml"/>
-    <import resource="classpath*:spring*.xml"/>
     <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
